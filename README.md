@@ -1,1 +1,1 @@
-# mern-starter
+# MERN Stack Template for starter template
