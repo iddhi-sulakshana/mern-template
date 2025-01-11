@@ -1,0 +1,17 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+.root-body {
+    height: 100dvh;
+    background-color: aquamarine;
+    overflow: hidden;
+}
+main {
+    width: 100%;
+    height: 90dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
