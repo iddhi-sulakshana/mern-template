@@ -7,6 +7,7 @@ const userSchema: Schema = new Schema(
     {
         name: { type: String, required: true },
         email: { type: String, required: true, unique: true },
+        password: { type: String, required: true },
         avatarUrl: {
             type: String,
             default: `https://robohash.org/set_set4/bgset_bg1/${() =>

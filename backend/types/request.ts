@@ -1,10 +1,12 @@
 import type { IUser } from "./user";
 
-// Base Request (UnAuthenticated)
-export interface UnAuthenticatedRequest extends Request {}
-
 // Base Request (Authenticated)
-export interface AuthenticatedRequest extends Request {
+export interface IAuthenticatedRequest {
     user: IUser;
     header: (name: string) => string | undefined;
+}
+
+export interface ILoginRequest {
+    email: string;
+    password: string;
 }

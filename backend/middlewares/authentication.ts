@@ -3,10 +3,10 @@ import Users from "../models/user";
 import type { NextFunction, Response } from "express";
 import { JWT_SECRET } from "../config/environment";
 import type { DecodedToken } from "../types/user";
-import type { AuthenticatedRequest } from "../types/request";
+import type { IAuthenticatedRequest } from "../types/request";
 
 export default async function (
-    req: AuthenticatedRequest,
+    req: IAuthenticatedRequest,
     res: Response,
     next: NextFunction
 ) {

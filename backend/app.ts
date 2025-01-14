@@ -15,7 +15,7 @@ app.use(
         // enable credentials for cookies
         credentials: true,
         // expose headers to the client
-        exposedHeaders: ["auth-token"],
+        exposedHeaders: ["x-auth-token"],
     })
 );
 
