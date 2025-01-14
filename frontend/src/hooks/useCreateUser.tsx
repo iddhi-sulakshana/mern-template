@@ -1,16 +1,20 @@
 import { useMutation } from "@tanstack/react-query";
 import { createUserApi } from "../services/users";
+import { toast } from "react-toastify";
 
-export default function useCreateUser() {
+export default function useCreateUser(reset: () => void) {
     return useMutation({
         mutationFn: createUserApi,
         onSuccess: (data) => {
             console.log("User created successfully", data);
-            // invalidate queries and show success message
+            reset();
+            toast.success(data.message);
         },
-        onError: (err) => {
+        onError: (err: any) => {
             console.error("Error creating user", err);
-            // show error message
+            if (err.response) {
+                toast.error(err.response.data.message);
+            }
         },
     });
 }

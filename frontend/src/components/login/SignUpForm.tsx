@@ -11,7 +11,6 @@ const schema = z.object({
 type FormValues = z.infer<typeof schema>;
 
 function SignUpForm() {
-    const { mutate, isPending } = useCreateUser();
     const {
         register,
         handleSubmit,
@@ -20,6 +19,7 @@ function SignUpForm() {
     } = useForm<FormValues>({
         resolver: zodResolver(schema),
     });
+    const { mutate, isPending } = useCreateUser(reset);
 
     const onSubmit = (data: FormValues) => {
         mutate(data);
